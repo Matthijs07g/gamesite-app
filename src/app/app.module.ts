@@ -11,6 +11,7 @@ import { BlogsComponent } from './page/blogs/blogs.component';
 import { ListComponent } from './page/blogs/list/list.component';
 import { DetailComponent } from './page/blogs/detail/detail.component';
 import { EditComponent } from './page/blogs/edit/edit.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { EditComponent } from './page/blogs/edit/edit.component';
     BlogsComponent,
     ListComponent,
     DetailComponent,
-    EditComponent
+    EditComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
