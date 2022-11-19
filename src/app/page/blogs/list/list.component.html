@@ -1,13 +1,17 @@
-<div class="row">
-    <div class="card" style="width: 18rem;">
-      <img src="../../../../assets/gtav.jpg" class="card-img-top" alt="gtav">
+<div class="row" >
+    <div class="card" style="width: 18rem;" *ngFor="let blog of blogs">
+      <img src="{{ blog.img }}" class="card-img-top" alt="">
       <div class="card-body">
-        <h5 class="card-title">Gta V</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a routerLink="1" class="btn btn-primary">view</a>
+        <h5 class="card-title">{{ blog.name }}</h5>
+        <p class="card-text">{{ blog.sDesc }}</p>
+        <a routerLink="{{ blog.id}}" class="btn btn-primary">Details</a>
       </div>
     </div>
-    <div class="card" style="width: 18rem;">
+
+
+
+
+    <!-- <div class="card" style="width: 18rem;">
       <img src="../../../../assets/ark.jpg" class="card-img-top" alt="ark">
       <div class="card-body">
         <h5 class="card-title">Ark: Survival Evolved</h5>
@@ -46,6 +50,6 @@
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         <a routerLink="6" class="btn btn-primary">view</a>
       </div>
-    </div>
+    </div> -->
     
     </div>

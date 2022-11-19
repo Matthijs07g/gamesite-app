@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Model } from '../model';
+import { blog } from '../blog';
 
 
 @Component({
@@ -15,15 +15,8 @@ export class DetailComponent {
   constructor(private route: ActivatedRoute, private router: Router){}
 
   ngOnInit(): void{
-    var game: Model[] = []
-    game.push(new Model("Gta V", "a game where you can do anything", "a game that takes place in a city where you can do anything", new Date(), '../../../assets/gtav.jpg'));
-
-
-    game.push(new Model("Gta V", "a game where you can do anything", "a game that takes place in a city where you can do anything", new Date(), '../../../assets/gtav.jpg'));
-    game.push(new Model("Gta V", "a game where you can do anything", "a game that takes place in a city where you can do anything", new Date(), '../../../assets/gtav.jpg'));
-    game.push(new Model("Gta V", "a game where you can do anything", "a game that takes place in a city where you can do anything", new Date(), '../../../assets/gtav.jpg'));
-    game.push(new Model("Gta V", "a game where you can do anything", "a game that takes place in a city where you can do anything", new Date(), '../../../assets/gtav.jpg'));
-    game.push(new Model("Gta V", "a game where you can do anything", "a game that takes place in a city where you can do anything", new Date(), '../../../assets/gtav.jpg'));
+    var game: blog[] = []
+    game.push(new blog("Gta V", "a game where you can do anything", "a game that takes place in a city where you can do anything", new Date(), '../../../assets/gtav.jpg'));
 
 
     this.id = this.route.snapshot.paramMap.get('id');

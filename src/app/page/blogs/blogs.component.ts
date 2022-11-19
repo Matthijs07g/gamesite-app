@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Model } from './model';
+import { blog } from './blog';
 
 @Component({
   selector: 'app-blogs',
@@ -10,7 +10,7 @@ export class BlogsComponent {
 
   constructor() { }
   ngOnInit(): void {
-    var gtav = new Model("gtav", "a game where you can do anything", "a game that takes place in a city where you can do anything", new Date(), '../../../assets/gtav.jpg');
+    var gtav = new blog("gtav", "a game where you can do anything", "a game that takes place in a city where you can do anything", new Date(), '../../../assets/gtav.jpg');
   }
 
 }
