@@ -7,13 +7,21 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { AboutComponent } from './page/about/about.component';
 import { HomeComponent } from './page/home/home.component';
+import { BlogsComponent } from './page/blogs/blogs.component';
+import { ListComponent } from './page/blogs/list/list.component';
+import { DetailComponent } from './page/blogs/detail/detail.component';
+import { EditComponent } from './page/blogs/edit/edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     AboutComponent,
-    HomeComponent
+    HomeComponent,
+    BlogsComponent,
+    ListComponent,
+    DetailComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
