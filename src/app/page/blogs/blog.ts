@@ -6,8 +6,8 @@ export class blog {
     createDate: Date;
     img: string;
 
-    constructor(name= '', sDesc='', desc='', createDate=new Date(), img=''){
-        this.id = 0;
+    constructor(id=0, name= '', sDesc='', desc='', createDate=new Date(), img=''){
+        this.id = id;
         this.name = name;
         this.sDesc = sDesc;
         this.desc = desc;

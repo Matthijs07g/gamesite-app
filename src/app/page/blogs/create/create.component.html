@@ -1,1 +1,13 @@
-<p>create works!</p>
+<h2>Create:</h2>
+<form #cardForm="ngForm" (ngSubmit)="onClickSubmit(cardForm.value)">
+    <label for="name">Naam:</label><br>
+    <input type="text" name="name" placeholder="Naam" ngModel><br><br>
+    <label for="name">Afbeelding:</label><br>
+    <input type="text" name="img" placeholder="Afbeelding url" ngModel><br><br><br>
+    <label for="desc">Korte Beschrijving:</label><br>
+    <textarea type="text" name="sdesc" rows="20" cols="100" placeholder="Jouw korte beschrijving" ngModel></textarea><br><br>
+    <label for="desc">Beschrijving:</label><br>
+    <textarea type="text" name="desc" rows="20" cols="100" placeholder="Jouw uitgebreide beschrijving" ngModel></textarea>
+    <br><br>
+    <input class="btn btn-primary" type="submit" value="Submit">
+</form>

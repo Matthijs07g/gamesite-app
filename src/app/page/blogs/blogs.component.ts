@@ -11,7 +11,7 @@ export class BlogsComponent {
 
   constructor(private route: ActivatedRoute, private router :Router) { }
   ngOnInit(): void {
-    var gtav = new blog("gtav", "a game where you can do anything", "a game that takes place in a city where you can do anything", new Date(), '../../../assets/gtav.jpg');
+    var gtav = new blog(0, "gtav", "a game where you can do anything", "a game that takes place in a city where you can do anything", new Date(), '../../../assets/gtav.jpg');
   }
 
   create(): void {
