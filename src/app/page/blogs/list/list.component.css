@@ -10,3 +10,7 @@ img{
 .row{
     margin-left: 50px;
 }
+button{
+    background-color: rgb(153, 0, 0);
+    float: right;
+}

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { blog } from './blog';
 
 
@@ -58,7 +59,7 @@ export class BlogService {
         }
     ];
 
-    constructor(){
+    constructor(private route: ActivatedRoute, private router :Router){
         console.log('Service constructor aangeroepen');
     }
 
@@ -79,5 +80,15 @@ export class BlogService {
     }
     updateBlog(updated: blog){
         this.blogs[updated.id] = updated;
+    }
+    delete(id : number): void{
+        this.blogs.splice(id,1)
+        let num =  0;
+        this.blogs.forEach(blog => {
+          blog.id = num  
+          num++;
+        });
+        this.router.navigate(['/blogs/'], {relativeTo: this.route})
+
     }
 }

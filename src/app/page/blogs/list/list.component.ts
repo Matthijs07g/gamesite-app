@@ -15,4 +15,7 @@ export class ListComponent implements OnInit{
   ngOnInit(): void {
       this.blogs = this.blogService.getBlogs();
   }
+  delete(num : any): void{
+    this.blogService.delete(num);
+  }
 }
