@@ -1,1 +1,30 @@
-<p>edit works!</p>
+<h2>Edit:</h2>
+<form #blogForm="ngForm" (ngSubmit)="onClickSubmit(blogForm.value)">
+    <label for="name">Naam:</label><br>
+    <input type="text" id="name" value="{{ gamename }}" ngModel><br><br><br>
+    <label for="desc">Beschrijving:</label><br>
+    <textarea id="desc" name="desc" rows="70" cols="100" value="{{desc}}"></textarea>
+    <br><br><br><br>
+    <input class="btn btn-primary" type="submit" value="Submit">
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <label for="name">Naam:</label><br>
+    <input type="text" id="name" formControlName="name" value="{{ name }}"><br><br><br>
+
+    <label for="desc">Beschrijving:</label><br>
+    <textarea id="desc" name="desc" rows="70" cols="100" value="{{desc}}"></textarea>
+
+    <br><br><br><br>
+    <a  class="btn btn-primary" (click)="submit()">Submit</a> -->
+    <!-- <label for="name">Naam:</label>
+    <input type="text" id="name" value=""> -->
+</form>

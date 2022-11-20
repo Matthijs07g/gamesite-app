@@ -31,4 +31,9 @@ export class DetailComponent implements OnInit {
     this.router.navigate(['edit'], { relativeTo: this.route });
   }
 
+  loadEdit(): void{
+    this.name = 'test'
+    this.desc ='test2'
+  }
+
 }

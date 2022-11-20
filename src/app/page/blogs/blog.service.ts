@@ -72,4 +72,9 @@ export class BlogService {
         let Id = Number(id);
         return this.blogs.filter((blog) => blog.id === Id)[0];
     }
+
+    addBlog(): blog[]{
+        this.blogs.push();
+        return this.blogs;
+    }
 }

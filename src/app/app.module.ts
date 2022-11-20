@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule} from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-//import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { AboutComponent } from './page/about/about.component';
 import { HomeComponent } from './page/home/home.component';
@@ -30,7 +31,9 @@ import { CreateComponent } from './page/blogs/create/create.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
