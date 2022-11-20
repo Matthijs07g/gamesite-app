@@ -1,26 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { blog } from '../blog';
-
+import { BlogService } from '../blog.service';
 
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.css']
 })
-export class DetailComponent {
-  id: string | null = null;
-  gameName: string | null = null;
+export class DetailComponent implements OnInit {
+  id: string |null = '';
+  name: string | undefined;
+  desc: string | undefined;
+  img: string | undefined;
+  date: Date | undefined;
 
-  constructor(private route: ActivatedRoute, private router: Router){}
+  constructor(private blogService: BlogService, private route: ActivatedRoute, private router :Router){ }
 
   ngOnInit(): void{
-    var game: blog[] = []
-    game.push(new blog("Gta V", "a game where you can do anything", "a game that takes place in a city where you can do anything", new Date(), '../../../assets/gtav.jpg'));
-
-
+    console.log('detail component')
     this.id = this.route.snapshot.paramMap.get('id');
+    let blog = this.blogService.getBlogById(this.id);
+    this.name = blog.name;
+    this.desc = blog.desc;
+    this.img = blog.img;
+    this.date= blog.createDate;
     
+  }
+  edit(): void {
+    //this.router.navigate(['edit'], { relativeTo: this.route });
   }
 
 }

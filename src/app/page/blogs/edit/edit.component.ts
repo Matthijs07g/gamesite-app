@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent {
+  constructor(){ }
 
+  ngOnInit(): void{
+    console.log('edit component')
+  }
 }

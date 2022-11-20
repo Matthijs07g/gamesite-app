@@ -67,8 +67,9 @@ export class BlogService {
         return this.blogs;
     }
 
-    getBlogById(id: number): blog {
+    getBlogById(id: string|null): blog {
         console.log('getBlogById aangeroepen');
-        return this.blogs.filter((blog) => blog.id === id)[0];
+        let Id = Number(id);
+        return this.blogs.filter((blog) => blog.id === Id)[0];
     }
 }

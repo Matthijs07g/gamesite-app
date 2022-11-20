@@ -1,4 +1,10 @@
 <div class="component">
-    <p>{{ gameName }}</p>
-    <p>{{ id }}</p>
+    <h1>{{ name }}</h1>
+    <img src="{{ img }}" class="card-img-top" alt="{{ name }}">
+    <br>
+    <p>Gemaakt op:  {{ date }}</p>
+    <br><br>
+    <p>{{ desc }}</p>
+
+    <button type="button" class="btn btn-primary" (click)="edit()">Edit</button>
 </div>
