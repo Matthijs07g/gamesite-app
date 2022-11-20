@@ -8,9 +8,16 @@
         </p>
         <h1>GameBlogger</h1>
         <p>
-            Hier beschrijft je wat je project inhoudt. Beschrijf ook de
-            entiteiten/domeinobjecten die je gebruikt, en benoem per entiteit de
-            attributen met hun datatype.
+            Op de site worden er een soort van blogs bijgehouden over verschillende games. Op deze blogs staat informatie over de games, links naar handige pagina’s en
+            reacties van mensen over de blog of over hun ervaring met de game zelf.<br><br>
+
+            Er wordt gebruik gemaakt van 4 entiteiten zoals te zien is in de ERD.<br>
+            de entiteit gebruiker maakt gebruik van de attributen emailaddress, wachtwoord, geboortedatum, GebruikersNaam.
+            d.m.v. het emailaddress kunnen we zien of een account uniek is en in combinatie met wachtwoord wordt er ingelogd.
+            de geboortedatum is voor als een game/blog beschikbaar is vanaf een bepaalde leeftijd bijvoorbeeld 16 jaar en ouder.<br>
+            De blog zelf heeft de attributen: titel, afbeelding, beschrijving en createDate. met de titel en afbeelding krijg je een al snel een indruk over de blog.
+            met de beschrijving kan je uitgebreid lezen waar de game van de blog overgaat.<br>
+            De game maakt gebruik van de attributen: naam, korteBeschrijving en genre. De naam spreekt voor zich en een korte beschrijving is voor een snelle indruk over de game. En genre is er voor als er later nog een optie komt om op games te sorteren
         </p>
     </div>
     <div class="col-sm-6 col-md-4 col-lg-3">
@@ -19,11 +26,11 @@
                 class="d-flex justify-content-center align-items-center px-3 py-3"
             >
                 <!-- Je mag een foto van jezelf toevoegen, maar dat is niet verplicht. -->
-                <img
+                <!-- <img
                     src="assets/images/person.png"
                     class="card-img-top rounded-circle border profile-pic px-4 py-4"
                     alt="..."
-                />
+                /> -->
             </div>
             <div class="card-body">
                 <h5 class="card-title">Matthijs van Gastel</h5>
@@ -35,38 +42,48 @@
 
 <h3>Entiteiten</h3>
 <p>
-    Hier geef je een toelichting op je entiteiten. Voeg ook een afbeelding van
-    je model toe zoals dat bij NoSql gevraagd wordt.
+    Voor de entiteit en attribuut gebruik kunt u dat zien in de uitleg hierboven. <br>
+    de relaties zijn als volgt:<br>
+    een gebruiker kan vrienden worden met een andere gebruiker, een gebruiker kan een blog beheren/bezoeken en een gebruiker kan ook reacties plaatsen.<br>
+    een blog gaat over een game en bevat reacties die onderaan de blog te zien zijn.
 </p>
 
-<img src="assets/images/erd.png" class="px-5 py-5" alt="..." />
+<img src="../../../assets/erd2.2.PNG" class="px-5 py-5" alt="erd" />
 
 <div class="row">
-    <div class="col-sm-12 col-md-4">
-        <p>User</p>
+    <div class="col-sm-9 col-md-3">
+        <p>Gebruiker</p>
         <ul>
-            <li>naam: string</li>
-            <li>id: number</li>
-            <li>birthdate: date</li>
-            <li>isSelected: boolean</li>
+            <li>emailaddress: string</li>
+            <li>wachtwoord: string</li>
+            <li>geboortedatum: dateTime</li>
+            <li>GebruikersNaam: string</li>
+            <li>Admin: boolean</li>
         </ul>
     </div>
-    <div class="col-sm-12 col-md-4">
-        <p>Entiteit 2</p>
+    <div class="col-sm-9 col-md-3">
+        <p>Blog</p>
         <ul>
-            <li>naam: string</li>
-            <li>id: number</li>
-            <li>birthdate: date</li>
-            <li>isSelected: boolean</li>
+            <li>titel: string</li>
+            <li>afbeelding: img</li>
+            <li>beschrijving: string</li>
+            <li>createDate: date</li>
         </ul>
     </div>
-    <div class="col-sm-12 col-md-4">
-        <p>Entiteit 3</p>
+    <div class="col-sm-9 col-md-3">
+        <p>Game</p>
         <ul>
             <li>naam: string</li>
-            <li>id: number</li>
-            <li>birthdate: date</li>
-            <li>isSelected: boolean</li>
+            <li>korteBeschrijving: string</li>
+            <li>genre: Array</li>
+        </ul>
+    </div>
+    <div class="col-sm-9 col-md-3">
+        <p>Reacties</p>
+        <ul>
+            <li>tijd: dateTime</li>
+            <li>inhoud: string</li>
+            <li>like: int</li>
         </ul>
     </div>
 </div>
@@ -75,8 +92,7 @@
     <div class="col">
         <h3>Userstories</h3>
         <p>
-            Hier verwoord je in de vorm van userstories de functionaliteit van
-            jouw applicatie.
+          
         </p>
 
         <table class="table table-bordered">
@@ -89,34 +105,91 @@
                 <tr>
                     <td>1</td>
                     <td>
-                        Als gebruiker wil ik een overzicht van movies kunnen
-                        raadplegen, zodat ik kan zien welke movies op dit moment
-                        beschikbaar zijn.
+                        als gebruiker of admin wil ik kunnen inloggen, zodat ik gebruik kan maken van de single webapp
                     </td>
-                    <td>Overzicht is een grid.</td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>2</td>
                     <td>
-                        Als ingelogde gebruiker wil ik zelf een movie kunnen
-                        toevoegen, zodat ik mijn movies in het systeem kan
-                        invoeren.
+                        als gebruiker wil ik kunnen registreren, zodat ik kan inloggen
                     </td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>3</td>
                     <td>
-                        Als ingelogde gebruiker wil ik mijn eigen movies kunnen
-                        bewerken en verwijderen, zodat ik mijn informatie
-                        up-to-date kan houden.
+                        als gebruiker of admin wil ik kunnen uitloggen, zodat niet meer ingelogd ben
                     </td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>4</td>
                     <td>
-                        <p>Voeg zelf meer userstories toe.</p>
+                        als gebruiker of admin wil ik mijn profiel kunnen bekijken, zodat ik kan zien hoe mijn account eruit ziet voor anderen
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>
+                        als gebruiker of admin wil ik &quot;blogs&quot; kunnen bekijken, zodat ik kan zien wat er op de blogs staat
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>
+                        als gebruiker of admin wil ik mijn eigen &quot;blog&quot; kunnen aanmaken, zodat deze ook zichtbaar is voor andere gebruikers
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>
+                        als gebruiker of admin wil ik mijn eigen &quot;blog&quot; kunnen bewerken, zodat deze up-to-date blijft
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>
+                        als gebruiker of admin wil ik mijn eigen &quot;blog&quot; kunnen verwijderen, zodat deze niet meer zichtbaar is
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>
+                        als gebruiker of admin wil ik reacties kunnen plaatsen onder &quot;blogs&quot;, zodat ik kan laten weten wat ik er van vind
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>
+                        als admin wil ik reacties van andere gebruikers kunnen verwijderen, zodat ik ongepaste reacties kan verwijderen
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>
+                        als admin wil ik &quot;blogs&quot; van andere gebruikers kunnen verwijderen, zodat ik ongepaste blogs kan verwijderen voor andere gebruikers
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>
+                        als gebruiker wil ik vrienden kunnen worden van met andere gebruikers, zodat ik makkeijk kan volgen wat de andere gebruiker doet of heeft gemaakt
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>
+                        als gebruiker wil ik reacties van andere gebruikers kunnen liken, zodat ik kan laten weten wat ik van hun reactie vind
                     </td>
                     <td></td>
                 </tr>
