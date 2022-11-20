@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { blog } from '../blog';
 import { BlogService } from '../blog.service';
 import { DetailComponent } from '../detail/detail.component';
 
@@ -32,8 +33,17 @@ export class EditComponent {
   }
   onClickSubmit(result: any): void {
     //console.log(result.name)
+    this.id = this.route.snapshot.paramMap.get('id');
+    let Id = Number(this.id)
+    console.log(Id)
+    let updated = new blog(Id, result.name, result.sdesc, result.desc, new Date(), result.img)
+    
+    this.blogService.updateBlog(updated)
+    
     this.router.navigate(['/blogs/'+this.id], {relativeTo: this.route})
-        
+  }
+  cancel(): void{
+    this.router.navigate(['/blogs/'+this.id], {relativeTo: this.route})
   }
   
 }

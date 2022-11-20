@@ -1,9 +1,15 @@
 <h2>Edit:</h2>
-<form #blogForm="ngForm" (ngSubmit)="onClickSubmit(blogForm.value)">
+
+<form #cardForm="ngForm" (ngSubmit)="onClickSubmit(cardForm.value)">
     <label for="name">Naam:</label><br>
-    <input type="text" id="name" value="{{ gamename }}" ngModel><br><br><br>
+    <input type="text" name="name" placeholder="Nieuwe naam" ngModel><br><br>
+    <label for="name">Afbeelding:</label><br>
+    <textarea type="text" name="img" cols="100" placeholder="Nieuwe afbeelding url" ngModel></textarea><br><br><br>
+    <label for="desc">Korte Beschrijving:</label><br>
+    <textarea type="text" name="sdesc" rows="20" cols="100" placeholder="Nieuwe korte beschrijving" ngModel></textarea><br><br>
     <label for="desc">Beschrijving:</label><br>
-    <textarea id="desc" name="desc" rows="70" cols="100" value="{{desc}}"></textarea>
-    <br><br><br><br>
+    <textarea type="text" name="desc" rows="20" cols="100" placeholder="Nieuwe uitgebreide beschrijving" ngModel></textarea>
+    <br><br>
     <input class="btn btn-primary" type="submit" value="Submit">
+    <button type="button" class="btn btn-primary canc" (click)="cancel()">Anuleer</button>
 </form>

@@ -77,4 +77,7 @@ export class BlogService {
         this.blogs.push(newBlog);
         return this.blogs;
     }
+    updateBlog(updated: blog){
+        this.blogs[updated.id] = updated;
+    }
 }
